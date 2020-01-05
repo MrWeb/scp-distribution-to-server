@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 import subprocess
 
-# Configurations
-build_folder='js' #name of the build folder
-server_path='~/www/demos' #Server destintation (Where the app goes)
-ssh='fl' #ssh config alias or full user@ip
-# End Configurations
+# Configurations -----------
+build_folder='js' # name of the local build folder
+ssh='fl' # ssh config alias or full user@ip of the server
+server_path='~/www/demos' # Server destintation folder (where the app goes)
+# End Configurations -----------
 
 rsync_cmd = 'tar czfvv - '+ paths.build_folder +' | ssh ' + paths.ssh + ' "(cd ' + paths.server_path + ' && rm -rf ' + paths.build_folder + ' ; cat > build.tar.gz && tar -xzf build.tar.gz && rm build.tar.gz)"'
 
